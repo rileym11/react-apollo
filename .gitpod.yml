@@ -1,5 +1,5 @@
 tasks:
-  - init: yarn install && cd server && yarn install && npx prisma generate && yarn build
+  - init: yarn install && cd server && yarn install && npx prisma generate
 ports: 
   - port: 3000
     visibility: public
