@@ -10,7 +10,7 @@ Navigate to https://gitpod.io/#https://github.com/rileym11/react-apollo
 
 ### 2. Install Dependencies
 ```sh
-$ yarn install && (cd ./server && yarn install)
+$ yarn install && cd ./server && yarn install
 ```
 
 ### 3. Start the server
@@ -23,9 +23,8 @@ yarn start
 
 > **Note**: If you want to interact with the GraphQL API of the server inside a [GraphQL Playground](https://github.com/prisma/graphql-playground), you can navigate to [http://localhost:4000](http://localhost:4000).
 
-### 4. 
 
-### 5. Run the app
+### 4. Run the app
 
 Now that the server is running, you can start the React app as well. The command needs to be run in a new terminal tab/window inside the root directory `react-apollo` (because the current tab is blocked by the process running the server):
 
