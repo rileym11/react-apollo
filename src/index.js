@@ -16,8 +16,10 @@ import { AUTH_TOKEN } from './constants';
 import * as serviceWorker from './serviceWorker';
 import './styles/index.css';
 
+const baseUrl = process.env.REACT_APP_SERVER_URL ? process.env.REACT_APP_SERVER_URL.replace('https://', '') : 'localhost:4000'
+
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000'
+  uri: `https://${baseUrl}` || 'http://localhost:4000'
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -31,7 +33,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000/graphql`,
+  uri: `wss://${baseUrl}/graphql`,
   options: {
     reconnect: true,
     connectionParams: {

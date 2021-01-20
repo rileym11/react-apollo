@@ -14,7 +14,7 @@
     "subscriptions-transport-ws": "^0.9.18"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_SERVER_URL=$(gp url 4000) react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

@@ -13,7 +13,7 @@ const { getUserId } = require('./utils');
 const pubsub = new PubSub();
 
 const prisma = new PrismaClient({
-  errorFormat: 'minimal'
+  errorFormat: 'minimal',
 });
 
 const resolvers = {
@@ -30,6 +30,12 @@ const server = new ApolloServer({
     path.join(__dirname, 'schema.graphql'),
     'utf8'
   ),
+  cors: {
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+  },
   resolvers,
   context: ({ req }) => {
     return {
